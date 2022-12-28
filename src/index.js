@@ -3,11 +3,15 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import AppContext from './components/momentoContext';
+import MomentoApp from './components/momentoApp';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <AppContext>
+      <MomentoApp/>
+    </AppContext>
   </React.StrictMode>
 );
 
