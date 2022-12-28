@@ -1,0 +1,45 @@
+.main{
+    height: 100vh;
+    width: 100vw;
+    background-image: url("./images/1.jpg")  ;
+    
+    
+}
+.content{
+    display: flex;
+   align-items: center;
+   justify-content: center;
+   height: 60vh;
+    flex-direction: column;
+    gap: 10%;
+    
+     
+     
+}
+.button{
+    
+    border: 2px solid white;
+    border-radius: 25px;
+}
+.footer{
+    background-image: url("./images/1.jpg")  ;
+    height: 100vh;
+    
+}
+#downbuttonR{
+    border: 2px solid white;
+    border-radius: 25px;
+    position: fixed;
+    bottom: 1;
+    right: 0;
+    margin-right: 12%;
+    
+}
+#downbuttonL{
+    border: 2px solid white;
+    border-radius: 25px;
+    position: fixed;
+    bottom: 1;
+    left: 0;
+    margin-left: 8%;
+}
