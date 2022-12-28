@@ -3,11 +3,13 @@ import { MomentoContext } from "../momentoContext";
 
 const HomePage = () => {
 
-    const {setHome,setBracelet,setNavigation}=useContext(MomentoContext);
+    const {setHome,setBracelet,setNavigation,users,cerruntUser}=useContext(MomentoContext);
 
     return ( 
         <>
-        <button onClick={()=>{setHome(false);setBracelet(true)}}>Bracelet</button>
+        {console.log(cerruntUser.bracelets)};
+        {cerruntUser.bracelets.map(bracelet=><button>{bracelet.name}</button>)} 
+        
         <button onClick={()=>{setHome(false);setNavigation(true)}}>Navigation</button>
         </>
      );

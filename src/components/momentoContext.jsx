@@ -1,6 +1,8 @@
 import { createContext, useState } from "react";
 import { Context } from "react";
 import { useFormik } from "formik";
+import User from './user';
+import Bracelet from './bracelet';
 
 export const MomentoContext=createContext();
 
@@ -18,8 +20,9 @@ const AppContext = props => {
             password:''
 
         },
-        onSubmit:values=>{
-            
+        onSubmit:e=>{
+            e.preventDefault();
+            e.target.reset();
         },
 
     });
@@ -27,8 +30,15 @@ const AppContext = props => {
     const {children}=props;
 
     //////////user data
-    const [users,setUsers]=useState([]);
-
+    let bracelet1=new Bracelet('Nora','765jfghg','');
+    let bracelet2=new Bracelet('Shon','264h','');
+    let bracelet3=new Bracelet('Faruk','1234g4','');
+    let user1=new User('Shoshana','Damari','Shoshana@gmail.com','g1234',[bracelet1,bracelet2,bracelet3])
+    let user2=new User('Mama','Op','Mama@gmail.com','g1234',[bracelet1,bracelet2,bracelet3])
+    let user3=new User('Rafi','Yosefzon','Rafi@gmail.com','g1234',[bracelet1,bracelet2,bracelet3])
+    let user4=new User('Lomen','Marla','Lomen@gmail.com','g1234',[bracelet1,bracelet2,bracelet3])
+    const [users,setUsers]=useState([user1,user2,user3,user4]);
+    const [cerruntUser,setCerruntUser]=useState({});
 
     /////////login area
     const [logIn,setLogIn]=useState(true);
@@ -50,9 +60,9 @@ const AppContext = props => {
     const [denied,setDenied]=useState(false);
     return ( 
 
-        <MomentoContext.Provider value={{formik,home,setHome,bracelet,setBracelet,navigation,setNavigation,sharedNavigation,setSharedNavigation,navigationTo,setNavigationTo
-        ,logIn,setLogIn,details,setDetails,hasBracelet,setHasBracelet,varifacation,varifacationSet,braceletDetails,setBraceletDetails
-        }}>
+        <MomentoContext.Provider value={{users,formik,home,setHome,bracelet,setBracelet,navigation,setNavigation,sharedNavigation,setSharedNavigation,navigationTo,setNavigationTo
+        ,logIn,setLogIn,details,setDetails,hasBracelet,setHasBracelet,varifacation,varifacationSet,braceletDetails,setBraceletDetails,
+        cerruntUser,setCerruntUser}}>
 
             {children}
 
