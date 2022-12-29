@@ -10,7 +10,8 @@ const LogIn = () => {
         <>
             
             <form onSubmit={(e)=>formik.handleSubmit(e)}>
-                 
+
+             
             <div class="mb-3">
                 <label for="mail" class="form-label">Email address</label>
                 <input type="email" name="mail" class="form-control" aria-describedby="emailHelp" value={formik.values.mail} onChange={formik.handleChange}></input>
@@ -22,10 +23,8 @@ const LogIn = () => {
             </div>
             
                 <button onClick={()=>{setLogIn(false);setDetails(true)}}>Register</button>
-                {(users.findIndex(user=>user.password===formik.values.password))===(users.findIndex(user=>user.mail===formik.values.mail))&&(users.findIndex(user=>user.mail===formik.values.mail)!==-1)?<Link onClick={()=>{setCerruntUser(users.find(user=>user.mail===formik.values.mail));}} to="/home">Submit</Link>:<button type="Submit">Submit</button>}
+                {(users.findIndex(user=>user.password===formik.values.password))===(users.findIndex(user=>user.mail===formik.values.mail))&&(users.findIndex(user=>user.mail===formik.values.mail)!==-1)?<Link onClick={()=>{setCerruntUser(users.find(user=>user.mail===formik.values.mail))}} to="/home">Submit</Link>:<button type="Submit">Submit</button>}
 
-                {console.log(users.findIndex(user=>user.password===formik.values.password))};
-                {console.log(formik.values.mail)};
             </form>
         </>
      );

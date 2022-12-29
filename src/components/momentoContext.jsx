@@ -1,13 +1,20 @@
 import { createContext, useState } from "react";
-import { Context } from "react";
 import { useFormik } from "formik";
 import User from './user';
 import Bracelet from './bracelet';
+import { useEffect } from "react";
 
 export const MomentoContext=createContext();
 
 const AppContext = props => {
 
+    
+    useEffect(() => {
+        const interval = setInterval(() => {
+            let num=Math.floor(Math.random()*200);
+            setPrecentage(num);
+        }, 2000);
+    }, []); 
     ///////////formik
 
     const formik=useFormik({
@@ -30,16 +37,17 @@ const AppContext = props => {
     const {children}=props;
 
     //////////user data
-    let bracelet1=new Bracelet('Nora','765jfghg','');
-    let bracelet2=new Bracelet('Shon','264h','');
-    let bracelet3=new Bracelet('Faruk','1234g4','');
+    const [precentage,setPrecentage]=useState(4);
+    const [cerruntUser,setCerruntUser]=useState({});
+    const [cerruntBracelet,setCerruntBracelet]=useState({});
+    let bracelet1=new Bracelet('Nora','765jfghg','',100);
+    let bracelet2=new Bracelet('Shon','264h','',200);
+    let bracelet3=new Bracelet('Faruk','1234g4','',300);
     let user1=new User('Shoshana','Damari','Shoshana@gmail.com','g1234',[bracelet1,bracelet2,bracelet3])
     let user2=new User('Mama','Op','Mama@gmail.com','g1234',[bracelet1,bracelet2,bracelet3])
     let user3=new User('Rafi','Yosefzon','Rafi@gmail.com','g1234',[bracelet1,bracelet2,bracelet3])
     let user4=new User('Lomen','Marla','Lomen@gmail.com','g1234',[bracelet1,bracelet2,bracelet3])
     const [users,setUsers]=useState([user1,user2,user3,user4]);
-    const [cerruntUser,setCerruntUser]=useState({});
-
     /////////login area
     const [logIn,setLogIn]=useState(true);
     const [details,setDetails]=useState(false);
@@ -62,7 +70,7 @@ const AppContext = props => {
 
         <MomentoContext.Provider value={{users,formik,home,setHome,bracelet,setBracelet,navigation,setNavigation,sharedNavigation,setSharedNavigation,navigationTo,setNavigationTo
         ,logIn,setLogIn,details,setDetails,hasBracelet,setHasBracelet,varifacation,varifacationSet,braceletDetails,setBraceletDetails,
-        cerruntUser,setCerruntUser}}>
+        cerruntUser,setCerruntUser,cerruntBracelet,setCerruntBracelet,precentage}}>
 
             {children}
 

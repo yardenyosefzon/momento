@@ -4,8 +4,8 @@ import "./style.css"
 
 const HomePage = () => {
 
-    const {setHome,setBracelet,setNavigation,users,cerruntUser}=useContext(MomentoContext);
-
+    const {setHome,setBracelet,setNavigation,users,cerruntUser,setCerruntBracelet,cerruntBracelet}=useContext(MomentoContext);
+console.log(cerruntBracelet);
     return ( 
         <>
           <nav class="navbar bg-body-tertiary">
@@ -17,11 +17,10 @@ const HomePage = () => {
 </nav>
 <div className="main">
     <div className="content">
-        {console.log(cerruntUser.bracelets)};
+       
         {cerruntUser.bracelets.map(bracelet=>
-    <div><button className="button" onClick={()=>{setHome(false);setBracelet(true)}}>{bracelet.name}</button></div>)} 
+    <div><button className="button" onClick={()=>{setHome(false);setBracelet(true);setCerruntBracelet(bracelet)}}>{bracelet.name}</button></div>)} 
         
-        <button  className="button" onClick={()=>{setHome(false);setNavigation(true)}}>Navigation</button>
         </div>
         <div className="footer">
         <button id="downbuttonR"><i class="bi bi-cart"></i> buy now</button>

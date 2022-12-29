@@ -13,6 +13,7 @@ import Details from "./logIn/details";
 import HasBracelet from './logIn/hasBracelet';
 import Varifacation from "./logIn/varifacation";
 import BraceletDetalis from './logIn/braceletDetails';
+import ContactUs from "./home/contactUs";
 
 const MomentoApp = () => {
 
@@ -27,6 +28,7 @@ const MomentoApp = () => {
           <Routes>
                
               <Route path="/" element={logIn?<LogIn/>:(details?<Details/>:(hasBracelet?<HasBracelet/>:(varifacation?<Varifacation/>:(braceletDetails?<BraceletDetalis/>:<logIn/>))))}/>
+              <Route path="/contact" element={<ContactUs/>}/>
               <Route path="/purple" element={<></>}/>
               <Route path="/home" element={home?<HomePage/>:(bracelet?<Bracelet/>:(navigation?<Navigation/>:(sharedNavigation?<SharedNavigation/>:(navigationTo?<NavigationTo/>:<HomePage/>))))}/>
 
