@@ -14,11 +14,13 @@ import HasBracelet from './logIn/hasBracelet';
 import Varifacation from "./logIn/varifacation";
 import BraceletDetalis from './logIn/braceletDetails';
 import ContactUs from "./home/contactUs";
+import Purple from "./purple/purpleBarcod";
+
 
 const MomentoApp = () => {
 
   const {home,bracelet,navigation,sharedNavigation,navigationTo
-  ,logIn,details,hasBracelet,varifacation,braceletDetails
+  ,logIn,details,hasBracelet,varifacation,braceletDetails,PurpleBarcodebul,PurpleMain,PurpleBarcode
 }=useContext(MomentoContext)
 
     return ( 
@@ -27,12 +29,12 @@ const MomentoApp = () => {
 
           <Routes>
                
-              <Route path="/" element={logIn?<LogIn/>:(details?<Details/>:(hasBracelet?<HasBracelet/>:(varifacation?<Varifacation/>:(braceletDetails?<BraceletDetalis/>:<logIn/>))))}/>
-              <Route path="/contact" element={<ContactUs/>}/>
-              <Route path="/purple" element={<></>}/>
-              <Route path="/home" element={home?<HomePage/>:(bracelet?<Bracelet/>:(navigation?<Navigation/>:(sharedNavigation?<SharedNavigation/>:(navigationTo?<NavigationTo/>:<HomePage/>))))}/>
+          <Route path="/" element={logIn?<LogIn/>:(details?<Details/>:(hasBracelet?<HasBracelet/>:(varifacation?<Varifacation/>:(braceletDetails?<BraceletDetalis/>:<logIn/>))))}/>
+          <Route path="/purple" element={<Purple/>}/>
+          <Route path="/home" element={home?<HomePage/>:(bracelet?<Bracelet/>:(navigation?<Navigation/>:(sharedNavigation?<SharedNavigation/>:(navigationTo?<NavigationTo/>:<HomePage/>))))}/>
 
           </Routes>
+
         </BrowserRouter>
      );
 }

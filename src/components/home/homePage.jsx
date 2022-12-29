@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { MomentoContext } from "../momentoContext";
-import "./style.css"
+import "./style.css";
+import { Link } from "react-router-dom";
 
 const HomePage = () => {
 
@@ -23,8 +24,8 @@ console.log(cerruntBracelet);
         
         </div>
         <div className="footer">
-        <button id="downbuttonR"><i class="bi bi-cart"></i> buy now</button>
-        <button id="downbuttonL"> learn more</button>
+        <a href="https://www.amazon.com/"><button id="downbuttonR"><i class="bi bi-cart"></i> buy now</button></a>
+        <Link to="/purple"><button  id="downbuttonL"> Purple area</button></Link>
         </div>
         </div>
        

@@ -38,15 +38,15 @@ const AppContext = props => {
 
     //////////user data
     const [precentage,setPrecentage]=useState(4);
-    const [cerruntUser,setCerruntUser]=useState({});
-    const [cerruntBracelet,setCerruntBracelet]=useState({});
     let bracelet1=new Bracelet('Nora','765jfghg','',100);
     let bracelet2=new Bracelet('Shon','264h','',200);
     let bracelet3=new Bracelet('Faruk','1234g4','',300);
+    const [cerruntBracelet,setCerruntBracelet]=useState({});
     let user1=new User('Shoshana','Damari','Shoshana@gmail.com','g1234',[bracelet1,bracelet2,bracelet3])
     let user2=new User('Mama','Op','Mama@gmail.com','g1234',[bracelet1,bracelet2,bracelet3])
     let user3=new User('Rafi','Yosefzon','Rafi@gmail.com','g1234',[bracelet1,bracelet2,bracelet3])
     let user4=new User('Lomen','Marla','Lomen@gmail.com','g1234',[bracelet1,bracelet2,bracelet3])
+    const [cerruntUser,setCerruntUser]=useState(user1);
     const [users,setUsers]=useState([user1,user2,user3,user4]);
     /////////login area
     const [logIn,setLogIn]=useState(true);
@@ -63,14 +63,16 @@ const AppContext = props => {
     const [navigationTo,setNavigationTo]=useState(false);
     
     ///////purple area
-    const [purple,setPurple]=useState(true);
+    const [PurpleBarcodebul,setPurpleBarcodebul]=useState(true);
     const [whosLost,setWhosLost]=useState(false);
     const [denied,setDenied]=useState(false);
+    const [purpleMain,setPurpleMain]=useState(false);
+
     return ( 
 
         <MomentoContext.Provider value={{users,formik,home,setHome,bracelet,setBracelet,navigation,setNavigation,sharedNavigation,setSharedNavigation,navigationTo,setNavigationTo
         ,logIn,setLogIn,details,setDetails,hasBracelet,setHasBracelet,varifacation,varifacationSet,braceletDetails,setBraceletDetails,
-        cerruntUser,setCerruntUser,cerruntBracelet,setCerruntBracelet,precentage}}>
+        cerruntUser,setCerruntUser,cerruntBracelet,setCerruntBracelet,precentage,PurpleBarcodebul,setPurpleBarcodebul,purpleMain,setPurpleMain}}>
 
             {children}
 

@@ -6,6 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import AppContext from './components/momentoContext';
 import MomentoApp from './components/momentoApp';
 import Map from './components/home/map';
+import "./components/home/style.css"
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

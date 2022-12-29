@@ -10,7 +10,7 @@ const HasBracelet = () => {
         <>
         <p>Has bracelet</p>
         <button onClick={()=>{setHasBracelet(false);varifacationSet(true)}}>YES</button>
-        <Link to="/home">NO</Link>
+       <button><Link style={{color:"black"}} className="text-decoration-none" to="/home">NO</Link></button> 
         </>
      );
 }
